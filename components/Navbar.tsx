@@ -2,45 +2,43 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-
-// 2. Import NextAuth hooks
 import { useSession, signOut } from 'next-auth/react';
-
 import ThemeSwitcher from './ThemeSwitcher';
-import { usePathname } from 'next/navigation'; // Import the hook
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
-  // Get the current page's URL
   const pathname = usePathname();
-  const isHomepage = pathname === '/';
-
-  // 3. Get the NextAuth session status
   const { data: session, status } = useSession();
 
   return (
-    <header className="bg-gray-100 dark:bg-gray-800 shadow-lg w-full">
+    // --- UPDATED HEADER CLASSES ---
+    // 1. sticky top-0 z-50: Keeps navbar at the top while scrolling.
+    // 2. bg-white/70 & dark:bg-gray-900/70: Sets transparency (70% opacity).
+    // 3. backdrop-blur-md: Blurs whatever scrolls behind the navbar.
+    // 4. border-b: Adds a subtle line to separate nav from content.
+    <header className="sticky top-0 z-50 w-full transition-colors duration-300
+                       bg-white/70 dark:bg-gray-900/70 backdrop-blur-md 
+                       shadow-sm border-b border-white/20 dark:border-gray-700/30">
+      
       <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
         <Link href="/">
-          {/* --- IMAGE 1: For Light Mode (Visible by default, hidden in dark mode) --- */}
+          {/* --- IMAGE 1: Light Mode --- */}
           <Image
-            src="/logo.png" // This should be your Dark Text logo
+            src="/logo.png"
             alt="Shaila's Education Logo"
             width={100}
             height={30}
             priority
-            // block = visible, dark:hidden = hidden in dark mode
             className="w-auto h-auto object-contain block dark:hidden"
           />
 
-          {/* --- IMAGE 2: For Dark Mode (Hidden by default, visible in dark mode) --- */}
-          {/* Make sure you have a file named 'logo-white.png' (or similar) in your public folder */}
+          {/* --- IMAGE 2: Dark Mode --- */}
           <Image
-            src="/logo-white.png" // This should be your White Text logo
+            src="/logo-white.png"
             alt="Shaila's Education Logo"
             width={100}
             height={30}
             priority
-            // hidden = hidden by default, dark:block = visible in dark mode
             className="w-auto h-auto object-contain hidden dark:block"
           />
         </Link>
@@ -48,74 +46,59 @@ export default function Navbar() {
         <div className="flex items-center space-x-4 md:space-x-6">
           <Link
             href="/"
-            className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 font-medium"
           >
             Home
           </Link>
           <Link
             href="/courses"
-            className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 font-medium"
           >
             Courses
           </Link>
           <Link
             href="/contact"
-            className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 font-medium"
           >
             Contact
           </Link>
 
-          {/* Conditionally render the "Terms" link
-          {isHomepage && (
-            <a
-              href="#terms-and-conditions"
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
-            >
-              Terms
-            </a>
-          )} */}
-
           <Link
             href="/terms"
-            className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 font-medium"
           >
             Terms
           </Link>
 
-          {/* 4. Start: This block replaces the UserButton and /profile link logic */}
-          
-          {/* Show a loading state */}
+          {/* Auth Logic */}
           {status === 'loading' && (
             <div className="w-20 h-6 rounded-md bg-gray-300 dark:bg-gray-600 animate-pulse" />
           )}
 
-          {/* Show Sign In if unauthenticated */}
           {status === 'unauthenticated' && (
             <Link
-              href="/login" // Link to your custom login page
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+              href="/login"
+              className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 font-medium"
             >
               Sign In
             </Link>
           )}
 
-          {/* Show Profile and Sign Out if authenticated */}
           {status === 'authenticated' && (
             <>
               <Link
                 href="/profile"
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 font-medium"
               >
                 My Profile
               </Link>
               <button
-                onClick={() => signOut({ callbackUrl: '/' })} // Sign out and redirect to home
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                onClick={() => signOut({ callbackUrl: '/' })}
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 font-medium"
               >
                 Sign Out
               </button>
               
-              {/* Optional: Show user avatar if it exists in the session */}
               {session.user.image && (
                 <Link href="/profile">
                   <Image
@@ -123,13 +106,12 @@ export default function Navbar() {
                     alt="Profile"
                     width={32}
                     height={32}
-                    className="rounded-full"
+                    className="rounded-full border border-gray-300 dark:border-gray-600"
                   />
                 </Link>
               )}
             </>
           )}
-          {/* End: Auth block */}
 
           <ThemeSwitcher />
         </div>
