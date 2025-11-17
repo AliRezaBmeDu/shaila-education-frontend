@@ -5,7 +5,7 @@ import { getFile } from '@sanity/asset-utils';
 
 // --- 1. IMPORT NEXTAUTH ---
 import { getServerSession } from 'next-auth';
-import { authOptions } from '../../../../../app/api/auth/[...nextauth]/route'; // Adjust path if needed
+import { authOptions } from '@/lib/authOptions'; // Adjust path if needed
 
 // --- 2. IMPORT YOUR BUNNY.NET PLAYER ---
 import MyVideoPlayer from '../../../../../components/MyVideoPlayer'; // This is your react-player component
