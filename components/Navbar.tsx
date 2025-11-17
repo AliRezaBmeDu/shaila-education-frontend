@@ -21,14 +21,27 @@ export default function Navbar() {
     <header className="bg-gray-100 dark:bg-gray-800 shadow-lg w-full">
       <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
         <Link href="/">
+          {/* --- IMAGE 1: For Light Mode (Visible by default, hidden in dark mode) --- */}
           <Image
-            src="/logo.png"
+            src="/logo.png" // This should be your Dark Text logo
             alt="Shaila's Education Logo"
-            width={150}
-            height={40}
+            width={100}
+            height={30}
             priority
-            // Add this style to fix the warning
-            className="w-auto h-auto object-contain"
+            // block = visible, dark:hidden = hidden in dark mode
+            className="w-auto h-auto object-contain block dark:hidden"
+          />
+
+          {/* --- IMAGE 2: For Dark Mode (Hidden by default, visible in dark mode) --- */}
+          {/* Make sure you have a file named 'logo-white.png' (or similar) in your public folder */}
+          <Image
+            src="/logo-white.png" // This should be your White Text logo
+            alt="Shaila's Education Logo"
+            width={100}
+            height={30}
+            priority
+            // hidden = hidden by default, dark:block = visible in dark mode
+            className="w-auto h-auto object-contain hidden dark:block"
           />
         </Link>
 

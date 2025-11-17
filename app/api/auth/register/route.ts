@@ -1,3 +1,4 @@
+// frontend\app\api\auth\register\route.ts
 import { NextResponse } from "next/server";
 import { connectToDB } from "@/lib/mongoose";
 import User from "@/lib/models/user.model";
