@@ -27,6 +27,8 @@ export default function Navbar() {
             width={150}
             height={40}
             priority
+            // Add this style to fix the warning
+            className="w-auto h-auto object-contain"
           />
         </Link>
 
