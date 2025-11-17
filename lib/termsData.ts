@@ -72,7 +72,7 @@ export const termsAndConditions: TermItem[] = [
     id: 'policy',
     title: '6. Administrative Policy',
     content: [
-      'ACE reserves the right to modify these policies at any time.',
+      'The Authority reserves the right to modify these policies at any time.',
       'Enrollment implies the student\'s full agreement to all terms and conditions.',
       'The decision of the administration regarding any matter is final.',
     ],
