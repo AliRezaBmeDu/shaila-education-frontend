@@ -24,7 +24,7 @@ export default function RegisterPage() {
     }
 
     try {
-      const resUserExists = await fetch("/api/auth/register", {
+      const resUserExists = await fetch("/api/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
