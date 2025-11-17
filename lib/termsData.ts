@@ -10,71 +10,71 @@ export interface TermItem {
 
 // 2. New Main Title for the Terms section
 export const termsInfo = {
-  mainTitle: '🎓 ACE - Ali’s Conceptual Education',
-  subTitle: 'টার্মস অ্যান্ড কন্ডিশনস (অফলাইন ও অনলাইন)',
+  mainTitle: '🎓 Shaila’s Professional Education',
+  subTitle: 'Terms and Conditions',
 };
 
 // 3. New Contact Info for the Footer
 export const contactInfo = {
-  address: 'শাহ আনিস মসজিদ মার্কেট, মোমিন রোড, চট্টগ্রাম',
-  phone: '01841470907',
-  email: 'causeaftereffect@gmail.com',
+  address: '18, Baker Street, Carlingford, Sydney',
+  phone: '+61xxxxxxxx',
+  email: 'educator.shaila@gmail.com',
 };
 
 // 4. New Bengali Terms and Conditions data
 export const termsAndConditions: TermItem[] = [
   {
     id: 'admission',
-    title: '১. ভর্তি ও ফি',
+    title: '1. Admission & Fees',
     content: [
-      'ভর্তি সম্পন্ন করতে নির্ধারিত ফর্ম পূরণ ও ফি প্রদান বাধ্যতামূলক।',
-      'ভর্তি নিশ্চিত হলে কোনো অবস্থাতেই সম্পূর্ণ ফি ফেরতযোগ্য নয়।',
-      'প্রতিষ্ঠান প্রয়োজনে কোর্স ফি পরিবর্তন করতে পারে, যা শুধুমাত্র নতুন ব্যাচে প্রযোজ্য হবে।',
+      'Completing the prescribed form and payment of fees is mandatory to finalize admission.',
+      'Once admission is confirmed, the full fee is non-refundable under any circumstances.',
+      'The institution reserves the right to modify course fees, which will only be applicable to new batches.',
     ],
   },
   {
     id: 'payment',
-    title: '২. ফি প্রদানের সময়সীমা',
+    title: '2. Payment Deadlines',
     content: [
-      'ফি এককালীন বা কিস্তিতে পরিশোধ করা যাবে।',
-      'কিস্তি সময়মতো পরিশোধ না করলে ক্লাস বা অ্যাক্সেস বন্ধ হতে পারে।',
-      'রসিদ বা পেমেন্ট প্রমাণপত্র শিক্ষার্থীর সংরক্ষণে রাখতে হবে।',
+      'Fees can be paid via a one-time payment or in installments.',
+      'Failure to pay installments on time may result in the suspension of classes or access.',
+      'Students must retain receipts or proof of payment for their records.',
     ],
   },
   {
     id: 'refund',
-    title: '৩. ফান্ড রিটার্ন নীতি',
+    title: '3. Refund Policy',
     content: [
-      'ভর্তি বাতিলের আবেদন কোর্স শুরুর ৩ দিনের মধ্যে করলে সর্বোচ্চ ৫০% রিফান্ড হতে পারে।',
-      'কোর্স শুরু হওয়ার পর কোনো রিফান্ড প্রযোজ্য নয়।',
-      'বিশেষ ক্ষেত্রে প্রশাসনের বিবেচনায় আংশিক রিফান্ড বা ব্যাচ পরিবর্তন হতে পারে।',
+      'A maximum of 50% refund may be granted if a cancellation request is made within 3 days of the course start date.',
+      'No refunds are applicable once the course has officially started.',
+      'In special cases, partial refunds or batch transfers may be considered at the administration\'s discretion.',
     ],
   },
   {
     id: 'online',
-    title: '৪. অনলাইন ক্লাস ও কনটেন্ট',
+    title: '4. Online Classes & Content',
     content: [
-      'ভিডিও ও নোটস কেবল ব্যক্তিগত শিক্ষার জন্য, শেয়ার বা পুনঃপ্রকাশ নিষিদ্ধ।',
-      'অন্যের সাথে লগইন শেয়ার করলে অ্যাক্সেস স্থায়ীভাবে বন্ধ হবে।',
-      'কনটেন্ট কপিরাইট আইন দ্বারা সুরক্ষিত।',
+      'Videos and notes are for personal study only; sharing or republishing is strictly prohibited.',
+      'Sharing login credentials with others will result in the permanent suspension of access.',
+      'All content is protected by copyright laws.',
     ],
   },
   {
     id: 'offline',
-    title: '৫. অফলাইন ক্লাস',
+    title: '5. Offline Classes',
     content: [
-      'নির্ধারিত সময়ে উপস্থিত থাকা বাধ্যতামূলক।',
-      'অনুপস্থিত ক্লাসের জন্য আলাদা পুনঃক্লাসের নিশ্চয়তা নেই।',
-      'ক্লাস চলাকালে শৃঙ্খলা বজায় রাখা ও নির্দেশনা মেনে চলা আবশ্যক।',
+      'Attendance at the scheduled time is mandatory.',
+      'There is no guarantee of makeup classes for missed sessions.',
+      'Maintaining discipline and strictly following instructions during classes is required.',
     ],
   },
   {
     id: 'policy',
-    title: '৬. প্রশাসনিক নীতি',
+    title: '6. Administrative Policy',
     content: [
-      'ACE যেকোনো সময় নীতিমালা পরিবর্তন করতে পারে।',
-      'ভর্তি মানে শিক্ষার্থী সব শর্তে সম্মত।',
-      'প্রশাসনের সিদ্ধান্তই চূড়ান্ত।',
+      'ACE reserves the right to modify these policies at any time.',
+      'Enrollment implies the student\'s full agreement to all terms and conditions.',
+      'The decision of the administration regarding any matter is final.',
     ],
   },
 ];

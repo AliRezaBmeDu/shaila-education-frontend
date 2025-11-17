@@ -15,8 +15,8 @@ import AuthProvider from "../components/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ACE-Ali's Conceptual Education",
-  description: "Learn with Ali",
+  title: "Shaila Akhter Education",
+  description: "Learn with Shaila",
 };
 
 export default function RootLayout({
@@ -25,8 +25,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // 3. REMOVE the <ClerkProvider> wrapper
-    // <ClerkProvider ...>
       <html lang="en" suppressHydrationWarning>
         <body className={`${inter.className}`}>
           {/* 4. WRAP with your new AuthProvider */}
@@ -42,6 +40,5 @@ export default function RootLayout({
           </AuthProvider>
         </body>
       </html>
-    // </ClerkProvider>
   );
 }

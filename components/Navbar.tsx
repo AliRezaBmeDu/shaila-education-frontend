@@ -2,8 +2,6 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-// 1. Remove Clerk import
-// import { UserButton } from '@clerk/nextjs';
 
 // 2. Import NextAuth hooks
 import { useSession, signOut } from 'next-auth/react';
@@ -25,7 +23,7 @@ export default function Navbar() {
         <Link href="/">
           <Image
             src="/logo.png"
-            alt="ACE-Ali's Education Logo"
+            alt="Shaila's Education Logo"
             width={150}
             height={40}
             priority
@@ -52,7 +50,7 @@ export default function Navbar() {
             Contact
           </Link>
 
-          {/* Conditionally render the "Terms" link */}
+          {/* Conditionally render the "Terms" link
           {isHomepage && (
             <a
               href="#terms-and-conditions"
@@ -60,7 +58,14 @@ export default function Navbar() {
             >
               Terms
             </a>
-          )}
+          )} */}
+
+          <Link
+            href="/terms"
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+          >
+            Terms
+          </Link>
 
           {/* 4. Start: This block replaces the UserButton and /profile link logic */}
           

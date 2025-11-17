@@ -58,15 +58,15 @@ export default function ContactPage() {
       {/* --- Footer (Dark Theme) --- */}
             <footer className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white py-12 mt-12 border-t border-gray-200 dark:border-gray-700">
               <div className="container mx-auto px-6 text-center">
-                <h3 className="text-2xl font-bold mb-4">🟩 যোগাযোগ 🟩</h3>
-                <p className="mb-2 text-lg">ACE - Ali’s Conceptual Education</p>
+                <h3 className="text-2xl font-bold mb-4">🟩 Contact 🟩</h3>
+                <p className="mb-2 text-lg">Shail’s Professional Education</p>
                 <p className="mb-2">📍 {contactInfo.address}</p>
-                <p className="mb-2">📞 হোয়াটসঅ্যাপ: {contactInfo.phone}</p>
-                <p className="mb-6">✉️ ইমেইল: {contactInfo.email}</p>
+                <p className="mb-2">📞 Whatsapp: {contactInfo.phone}</p>
+                <p className="mb-6">✉️ E-mail: {contactInfo.email}</p>
                 
                 {/* --- THIS IS THE FIX --- */}
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  &copy; {new Date().getFullYear()} ACE-Ali's Conceptual Education. All rights reserved.
+                  &copy; {new Date().getFullYear()} Shaila's Professional Education. All rights reserved.
                 </p> {/* <-- CORRECTED CLOSING TAG */}
       
               </div>

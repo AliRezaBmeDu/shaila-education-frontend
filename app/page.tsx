@@ -2,7 +2,7 @@ import { sanityClient } from '../lib/sanity.client';
 import Image from 'next/image';
 
 // 1. Import all our new data and components
-import { termsAndConditions, termsInfo, contactInfo } from '../lib/termsData';
+import {  contactInfo } from '../lib/termsData';
 import { Course } from '../components/CourseCard';
 import CourseCarousel from '../components/CourseCarousel';
 
@@ -53,7 +53,7 @@ export default async function HomePage() {
             </div> */}
 
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-              Welcome to ACE-Ali's Conceptual Education
+              Welcome to learn with Shaila
             </h1>
             <p className="text-xl md:text-2xl">
               Your journey to knowledge starts here.
@@ -125,44 +125,20 @@ export default async function HomePage() {
           </form>
         </section>
 
-        {/* --- 3. Terms and Conditions (Dark Theme) --- */}
-        <section id="terms-and-conditions" className="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-lg shadow-xl">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 text-center">
-            {termsInfo.mainTitle}
-          </h2>
-          <p className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-8 text-center">
-            {termsInfo.subTitle}
-          </p>
-          <div className="space-y-8">
-            {termsAndConditions.map((term) => (
-              <article key={term.id} className="border-b border-gray-200 dark:border-gray-700 pb-6 last:border-b-0 last:pb-0">
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-                  🟦 {term.title}
-                </h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400 leading-relaxed">
-                  {term.content.map((point, index) => (
-                    <li key={index}>{point}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </section>
-
       </main>
 
       {/* --- Footer (Dark Theme) --- */}
       <footer className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white py-12 mt-12 border-t border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-6 text-center">
-          <h3 className="text-2xl font-bold mb-4">🟩 যোগাযোগ 🟩</h3>
-          <p className="mb-2 text-lg">ACE - Ali’s Conceptual Education</p>
+          <h3 className="text-2xl font-bold mb-4">🟩 Contact 🟩</h3>
+          <p className="mb-2 text-lg">Shaila’s Professional Education</p>
           <p className="mb-2">📍 {contactInfo.address}</p>
-          <p className="mb-2">📞 হোয়াটসঅ্যাপ: {contactInfo.phone}</p>
-          <p className="mb-6">✉️ ইমেইল: {contactInfo.email}</p>
+          <p className="mb-2">📞 whatsapp: {contactInfo.phone}</p>
+          <p className="mb-6">✉️ e-mail: {contactInfo.email}</p>
           
           {/* --- THIS IS THE FIX --- */}
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} ACE-Ali's Conceptual Education. All rights reserved.
+            &copy; {new Date().getFullYear()} Shaila's Professional Education. All rights reserved.
           </p> {/* <-- CORRECTED CLOSING TAG */}
 
         </div>
